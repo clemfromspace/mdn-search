@@ -6,7 +6,8 @@ import {
   HierarchicalMenu,
   PoweredBy,
   RefinementList,
-  Highlight
+  Highlight,
+  Pagination
 } from 'react-instantsearch/dom';
 
 import logo from './logo.svg';
@@ -30,7 +31,7 @@ class HitComponent extends Component {
           )}
           {hit.parent &&
             <span className="parent">
-                [<code><Highlight attribute="parent" hit={hit} tagName="mark" />]</code>
+                <code>[<Highlight attribute="parent" hit={hit} tagName="mark" />]</code>
             </span>
           }
           <a href={hit.link} target="_blank">
@@ -62,9 +63,9 @@ class App extends Component {
   render() {
     return (
       <InstantSearch
-        appId="QUWPJO7TEL"
-        apiKey="fb3f639514e7e384f21494eb685eec61"
-        indexName="dev_MDN"
+        appId="BU16S1B9J9"
+        apiKey="01cdd67acae098cf2fc908685b6aa9bc"
+        indexName="MDN"
       >
         <div className="container">
           <div className="header">
@@ -98,7 +99,10 @@ class App extends Component {
               </div>
             </div>
             <div className="col-9">
-              <Hits hitComponent={HitComponent}/>
+              <div className="hits-wrapper">
+                <Hits hitComponent={HitComponent}/>
+                <Pagination />
+              </div>
             </div>
           </div>
         </div>

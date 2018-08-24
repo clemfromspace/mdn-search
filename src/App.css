@@ -279,7 +279,7 @@ p {
     margin-bottom: 10px
 }
 
-.ais-Hits {
+.hits-wrapper {
     height: calc(100vh - 210px);
     min-height: 300px;
     position: relative;
@@ -314,6 +314,10 @@ p {
 }
 
 .hit h2 {
+    margin: 0;
+}
+
+.hit h2, .hit h2 [class^=ais-] {
     font-size: 20px
 }
 
@@ -330,8 +334,8 @@ p {
     margin-right: 4px
 }
 
-.hit code {
-    font-family: consolas, Liberation Mono, courier, monospace
+.hit code, .hit code [class^=ais-] {
+    font-family: consolas, Liberation Mono, courier, monospace;
 }
 
 .hit .label {
@@ -368,7 +372,7 @@ pre.syntaxbox {
     margin-bottom: 20px;
     padding: 15px;
     position: relative;
-    font-family: consolas, monaco, Andale Mono, monospace;
+    font-family: consolas, Liberation Mono, courier, monospace;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -385,6 +389,10 @@ pre.syntaxbox {
     hyphens: none
 }
 
+pre.syntaxbox [class^=ais-] {
+    font-family: consolas, Liberation Mono, courier, monospace;
+}
+
 .ais-Highlight .ais-Highlight-highlighted {
     background-color: #83d0f2
 }
@@ -398,7 +406,7 @@ pre.syntaxbox {
 .ais-Hits-item {
     display: block;
     padding: 0;
-    margin: 0;
+    margin: 0 0 15px;
     border: 0;
     box-shadow: none;
     width: 100%;
@@ -407,4 +415,17 @@ pre.syntaxbox {
 .footer {
     text-align: center;
     margin: 15px 0;
+}
+
+.ais-Pagination {
+    margin: 15px 0 0 0;
+}
+
+.ais-Pagination-item--selected .ais-Pagination-link {
+    background: #3f87a6;
+    border-color: #3f87a6;
+}
+
+.ais-Breadcrumb-link, .ais-HierarchicalMenu-link, .ais-Menu-link, .ais-Pagination-link, .ais-RatingMenu-link {
+    color: #2199e8;
 }
