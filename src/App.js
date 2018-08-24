@@ -68,7 +68,7 @@ class App extends Component {
       >
         <div className="container">
           <div className="header">
-            <h1>Algolia MDN web docs</h1>
+            <h1>Search the MDN web docs</h1>
             <PoweredBy/>
           </div>
           <div className="row">
