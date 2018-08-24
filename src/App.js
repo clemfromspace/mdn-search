@@ -10,7 +10,6 @@ import {
   Pagination
 } from 'react-instantsearch/dom';
 
-import logo from './logo.svg';
 import './App.css';
 
 const flags_icons = {
@@ -69,7 +68,6 @@ class App extends Component {
       >
         <div className="container">
           <div className="header">
-            <img src={logo} className="App-logo" alt="logo" />
             <h1>Algolia MDN web docs</h1>
             <PoweredBy/>
           </div>
