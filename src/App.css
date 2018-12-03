@@ -429,3 +429,8 @@ pre.syntaxbox [class^=ais-] {
 .ais-Breadcrumb-link, .ais-HierarchicalMenu-link, .ais-Menu-link, .ais-Pagination-link, .ais-RatingMenu-link {
     color: #2199e8;
 }
+
+.breadcrumbs {
+    font-size: 14px;
+    opacity: 0.7;
+}

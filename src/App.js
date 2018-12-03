@@ -20,10 +20,21 @@ const flags_icons = {
 };
 
 class HitComponent extends Component {
+
+  categoryPath = () => {
+    const { hit } = this.props;
+    const categoryKeys = Object.keys(hit.categories);
+    const categoryPath = categoryKeys[categoryKeys.length-1]
+    return (
+      <span className="breadcrumbs">{hit.categories[categoryPath]}</span>
+    );
+  }
+
   render() {
     let hit = this.props.hit;
     return (
       <div className="hit">
+        {this.categoryPath()}
         <h2>
           {hit.flags.map((flag, i) =>
             <i className={'fa fa-' + flags_icons[flag]} key={i} title={flag} />
@@ -50,9 +61,6 @@ class HitComponent extends Component {
             <Highlight attribute="syntax" hit={hit} tagName="mark" />
           </pre>
         }
-        {hit.tags.map((tag, i) =>
-          <span className="label" key={i}>{tag}</span>
-        )}
       </div>
     )
   }
