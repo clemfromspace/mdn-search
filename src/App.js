@@ -26,7 +26,7 @@ class HitComponent extends Component {
     const categoryKeys = Object.keys(hit.categories);
     let categoryPath = categoryKeys[categoryKeys.length-1]
     return (
-      <span className="breadcrumbs">{hit.categories[categoryPath].replace('&lt;', '<').replace('&gt;', '>')}</span>
+      <span className="breadcrumbs">{hit.categories[categoryPath].replace('&lt;', '<').replace('&gt;', '>').replace('&amp;', '&')}</span>
     );
   }
 
