@@ -24,9 +24,9 @@ class HitComponent extends Component {
   categoryPath = () => {
     const { hit } = this.props;
     const categoryKeys = Object.keys(hit.categories);
-    const categoryPath = categoryKeys[categoryKeys.length-1]
+    let categoryPath = categoryKeys[categoryKeys.length-1]
     return (
-      <span className="breadcrumbs">{hit.categories[categoryPath]}</span>
+      <span className="breadcrumbs">{hit.categories[categoryPath].replace('&lt;', '<').replace('&gt;', '>')}</span>
     );
   }
 
@@ -34,7 +34,6 @@ class HitComponent extends Component {
     let hit = this.props.hit;
     return (
       <div className="hit">
-        {this.categoryPath()}
         <h2>
           {hit.flags.map((flag, i) =>
             <i className={'fa fa-' + flags_icons[flag]} key={i} title={flag} />
@@ -53,6 +52,7 @@ class HitComponent extends Component {
             <span className="label">{hit.child_type}</span>
           }
         </h2>
+        {this.categoryPath()}
         <p>
           <Highlight attribute="short_description" hit={hit} tagName="mark" />
         </p>
